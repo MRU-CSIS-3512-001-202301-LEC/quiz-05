@@ -1,0 +1,11 @@
+li {
+    font-weight: bolder;
+}
+
+.pleasant {
+    color:forestgreen;
+}
+
+.faded {
+    opacity: 0.4;
+}
