@@ -1,17 +1,36 @@
+const OUTER = document.querySelector("#outer-div");
+const ADJ = document.querySelector("#adjacent-div");
+const H1 = document.querySelector("h1");
 const SPAN = document.querySelector("span");
+const P = document.querySelector("p");
+const INPUT = document.querySelector("input");
 
-SPAN.addEventListener("click", (e) => {
-  console.log(e.target);
-});
+let printCounter = 1;
 
-document
-  .querySelector("#outer")
-  .addEventListener("click", (e) => console.log(e.target));
+function logNodeName(event) {
+  console.log(`${printCounter}:`, event.target.nodeName);
+  printCounter += 1;
+}
 
-document
-  .querySelector("#nextTo")
-  .addEventListener("click", (e) => console.log(e.target));
+function logNumClasses(event) {
+  console.log(`${printCounter}:`, event.target.classList.length);
+  printCounter += 1;
+}
 
-document.querySelector("body").addEventListener("click", (e) => {
-  console.log("body: ", e.target);
-});
+function capitalize() {
+  INPUT.value = INPUT.value.toUpperCase();
+}
+
+function swapOutH1Text() {
+  H1.textContent = INPUT.value;
+}
+
+ADJ.addEventListener("click", capitalize);
+
+P.addEventListener("input", swapOutH1Text);
+
+SPAN.addEventListener("click", logNodeName);
+
+OUTER.addEventListener("click", logNumClasses);
+
+INPUT.addEventListener("input", logNodeName);

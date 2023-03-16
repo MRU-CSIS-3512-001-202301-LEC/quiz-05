@@ -8,6 +8,4 @@ function round(event) {
   event.target.classList.toggle("rounded");
 }
 
-document.querySelector("body").addEventListener("click", function (event) {
-  console.log(event.target.nodeName);
-});
+document.querySelector("body").addEventListener("click", round);
