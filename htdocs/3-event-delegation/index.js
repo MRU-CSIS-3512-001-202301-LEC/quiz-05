@@ -8,7 +8,7 @@ const INPUT = document.querySelector("input");
 let printCounter = 1;
 
 function logNodeName(event) {
-  console.log(`${printCounter}:`, event.target.nodeName);
+  console.log(`${printCounter}:`, event.target.nodeName.toLowerCase());
   printCounter += 1;
 }
 
@@ -34,3 +34,11 @@ SPAN.addEventListener("click", logNodeName);
 OUTER.addEventListener("click", logNumClasses);
 
 INPUT.addEventListener("input", logNodeName);
+
+OUTER.addEventListener("click", (event) => {
+  if (event.target === OUTER) return;
+
+  if (event.target.classList.contains("paddy")) {
+    console.log("paddy");
+  }
+});

@@ -1,4 +1,4 @@
-const LAPS_COMPLETED = [8, 12, 6.5, 111, 16, 9, 8];
+const LAPS = [8, 12, 6.5, 111, 16, 9, 8];
 
 const BTN = document.querySelector("button");
 
@@ -14,14 +14,14 @@ function asLi(num) {
   return li;
 }
 
-let lapList = LAPS_COMPLETED.map((lap) => asLi(lap));
+let lapList = LAPS.map((lap) => asLi(lap));
 
 document.body.append(ol(lapList));
 
 function sortList() {
   const OL = document.querySelector("ol");
-  LAPS_COMPLETED.sort((a, b) => a - b);
-  let lapList = LAPS_COMPLETED.map((lap) => asLi(lap));
+  LAPS.sort((a, b) => a - b);
+  let lapList = LAPS.map((lap) => asLi(lap));
   OL.replaceChildren(); // gotcha!
   OL.append(...lapList);
 }
