@@ -36,7 +36,7 @@ OUTER.addEventListener("click", logNumClasses);
 INPUT.addEventListener("input", logNodeName);
 
 OUTER.addEventListener("click", (event) => {
-  if (event.target === OUTER) return;
+  if (event.target === OUTER) return; // OUTER shouldn't react to itself
 
   if (event.target.classList.contains("paddy")) {
     console.log("paddy");
